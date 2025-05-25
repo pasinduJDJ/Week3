@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Posts</h2>
+{% for post in posts %}
+<div class="card mb-3 px-2" style="border-radius: 30px;">
+    <div class="card-body ">
+        <h5 class="card-title text-danger fw-bold">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <p class="card-text"><small class="text-muted">Posted on {{ post.created_at|date:"Y-m-d H:i" }}</small></p>
+    </div>
+</div>
+{% empty %}
+<p>No posts available.</p>
+{% endfor %}
+{% endblock %}
