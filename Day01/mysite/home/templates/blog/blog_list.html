@@ -14,6 +14,7 @@
                 </h3>
                 <p class="text-muted">{{ post.created_at|date:"M d, Y" }}</p>
                 <p>{{ post.content|truncatewords:30 }}</p>
+                <a href="{% url 'blog_edit' post.id %}"> Update </a>
             </div>
         </div>
         {% empty %}
