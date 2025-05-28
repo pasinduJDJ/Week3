@@ -35,3 +35,13 @@ def edit_post(request, id):
         return redirect('blog_detail', pk=post.id)  
 
     return render(request, 'blog/blog_edit.html', {'post': post})
+
+def delete_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, 'Post deleted successfully.')
+        return redirect('blog_list')
+
+    return render(request, 'blog/delete_confirm', {'post': post})
