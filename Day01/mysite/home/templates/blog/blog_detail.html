@@ -4,11 +4,12 @@
 {% block content %}
 <div class="container mt-4">
   <div class="card shadow-lg">
-    {% if post.image %}
-    <img src="{{ post.image.url }}" class="card-img-top img-fluid " alt="{{ post.title }}">
-    {% endif %}
+
     <div class="card-body">
       <h2 class="card-title fw-bolder text-success">{{ post.title }}</h2>
+      {% if post.image %}
+      <img src="{{ post.image.url }}" class="card-img-top img-thumbnail p-2" style="width: 800px; height: auto;"  alt="{{ post.title }}">
+      {% endif %}
       <p class="card-text">{{ post.content|linebreaks }}</p>
       <p class="text-muted">Posted on {{ post.created_at|date:"M d, Y" }}</p>
       <div class="mt-5">
