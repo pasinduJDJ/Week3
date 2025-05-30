@@ -2,7 +2,7 @@
 {% block content %}
 <div class="container mt-5">
     <div class="alert alert-warning">
-        <h4>Are you sure you want to delete "{{ post.title }}"?</h4>
+        <h4 >Are you sure you want to delete "{{ post.title }}"?</h4>
         <form method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger">Yes, delete</button>
